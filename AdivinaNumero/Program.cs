@@ -14,30 +14,24 @@ namespace AdivinaNumero
             int intentos = 1;
             while (numeroUsuario != numeroAleatorio)
             {
+                intentos++;
                 if (numeroUsuario < numeroAleatorio && numeroUsuario > 1)
                 {
                     Console.WriteLine("Intenta de nuevo con un número más grande");
-                    numeroUsuario = int.Parse(Console.ReadLine());
-                    intentos++;
                 }
                 else if (numeroUsuario > numeroAleatorio && numeroUsuario < 100)
                 {
                     Console.WriteLine("Intenta de nuevo con un número más pequeño");
-                    numeroUsuario = int.Parse(Console.ReadLine());
-                    intentos++;
                 }
                 else if (numeroUsuario < 1)
                 {
                     Console.WriteLine("Has introducido un número menor que 1, intenta de nuevo");
-                    numeroUsuario = int.Parse(Console.ReadLine());
-                    intentos++;
                 }
                 else if (numeroUsuario > 100)
                 {
                     Console.WriteLine("Has introducido un número mayor que 100, intenta de nuevo");
-                    numeroUsuario = int.Parse(Console.ReadLine());
-                    intentos++;
                 }
+                numeroUsuario = int.Parse(Console.ReadLine());
             }
             Console.WriteLine($"Lo has conseguido al {intentos} intento.");
         }
